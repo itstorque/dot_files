@@ -9,6 +9,14 @@ PATH="/usr/local/bin:$PATH"
 
 PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
+PATH="/opt/homebrew/lib:$PATH"
+
+# added after pip3 failed to recognize portaudio when installing pyaudio. 
+# Homebrew pacakges handled differently on M1 macs
+export CPATH=/opt/homebrew/include
+export LIBRARY_PATH=/opt/homebrew/lib
+export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
+
 eval $(/opt/homebrew/bin/brew shellenv)
 
 # aliases I use
